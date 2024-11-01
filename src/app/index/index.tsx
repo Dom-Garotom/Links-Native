@@ -10,7 +10,9 @@ export default function Home() {
         <View style={styles.container}>
             <Header />
 
-            <ListCategory />
+            <ListCategory 
+                onChange={() => console.log}
+            />
 
             <FlatList
                 data={Listlinks}

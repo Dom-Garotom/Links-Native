@@ -2,8 +2,11 @@ import { categories } from "@/utils/listCategories";
 import { FlatList, StyleSheet } from "react-native";
 import CategoryItem from "@/components/atomo/category";
 
+type Props = {
+    onChange : ( categories : string ) => void
+}
 
-export default function ListCategory() {
+export default function ListCategory( {onChange} : Props) {
     return (
         <FlatList
             data={categories}
@@ -13,6 +16,7 @@ export default function ListCategory() {
                     content={item.content}
                     icon={item.icon}
                     key={item.id}
+                    onPress={() => onChange(item.content)}
                 />
             }
             showsHorizontalScrollIndicator={false}
