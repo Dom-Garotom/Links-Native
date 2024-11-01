@@ -3,6 +3,7 @@ import { styles } from "./styles";
 import { MaterialIcons } from "@expo/vector-icons";
 import ListCategory from "@/components/molecula/listCategory";
 import { router } from "expo-router";
+import InputDefault from "@/components/atomo/input";
 
 
 export default function AddPage() {
@@ -17,6 +18,9 @@ export default function AddPage() {
         </View>
         <Text style={styles.label}>Selcione uma categoria</Text>
         <ListCategory onChange={()=> console.log}/>
+        <View>
+          <InputDefault placeholder="Name"/>
+        </View>
     </View>
   )
 }
