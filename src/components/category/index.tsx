@@ -18,8 +18,8 @@ export default function CategoryItem({ icon, content, ...props }: Props) {
 
     return (
         <Pressable style={isVisible ? styles.visible : styles.container} {...props} onPress={select}>
-            <MaterialIcons name={icon ? icon : "code"} size={20} color={colors.gray[500]} />
-            <Text style={styles.text}>{content}</Text>
+            <MaterialIcons name={icon ? icon : "code"} size={20} color={isVisible ? "#fff" : colors.gray[500] } />
+            <Text style={isVisible ? styles.textVisible : styles.text }>{content}</Text>
         </Pressable>
     )
 }
@@ -36,6 +36,11 @@ const styles = StyleSheet.create({
 
     text: {
         color: colors.gray[500]
+    },
+
+    textVisible:{
+        color: "#fff",
+        fontWeight: "600"
     },
 
     visible: {
