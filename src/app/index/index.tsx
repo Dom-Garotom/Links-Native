@@ -3,6 +3,7 @@ import { styles } from "./styles";
 import Header from "@/components/atomo/header/header";
 import ListCategory from "@/components/molecula/listCategory";
 import LinkItem from "@/components/atomo/link";
+import { Listlinks } from "@/utils/listLink";
 
 export default function Home() {
     return (
@@ -12,12 +13,12 @@ export default function Home() {
             <ListCategory />
 
             <FlatList
-                data={["1", "2", "3", "4", "5", "6", "7", "8", '9', "10", "11", "12"]}
-                keyExtractor={item => item}
-                renderItem={() => (
+                data={Listlinks}
+                keyExtractor={item => item.id}
+                renderItem={( { item } ) => (
                     <LinkItem
-                        name="RocketSeat"
-                        url="http://rocketseat.com.br"
+                        name={item.name}
+                        url={item.url}
                     />
                 )}
                 showsVerticalScrollIndicator={false}
