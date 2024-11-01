@@ -22,6 +22,10 @@ export const styles = StyleSheet.create({
 
     label:{
         color: colors.gray[500],
+    },
+
+    form:{
+        gap: 16,
     }
 
 }) 
