@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
         alignItems: "center",
         gap: 5,
         height: 30,
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        borderRadius: 5,
     },
 
     text: {

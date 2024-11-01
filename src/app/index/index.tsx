@@ -1,9 +1,8 @@
 import { View } from "react-native";
 import { styles } from "./styles";
 import Header from "@/components/header/header";
-import CategoryItem from "@/components/category";
-import { categories } from "@/utils/listCategories";
 import ListCategory from "@/components/listCategory";
+import LinkItem from "@/components/link";
 
 export default function Home() {
     return (
@@ -11,6 +10,7 @@ export default function Home() {
             <Header />
 
             <ListCategory/>
+            <LinkItem name="RocketSeat" url="http://rocketseat.com.br" onDetails={() => console.log("Frunfando")}  />
 
         </View>
     )
