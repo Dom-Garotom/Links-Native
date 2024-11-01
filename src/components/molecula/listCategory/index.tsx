@@ -1,6 +1,6 @@
 import { categories } from "@/utils/listCategories";
 import { FlatList, StyleSheet } from "react-native";
-import CategoryItem from "../category";
+import CategoryItem from "@/components/atomo/category";
 
 
 export default function ListCategory() {

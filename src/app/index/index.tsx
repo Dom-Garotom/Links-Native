@@ -1,8 +1,8 @@
 import { FlatList , View } from "react-native";
 import { styles } from "./styles";
-import Header from "@/components/header/header";
-import ListCategory from "@/components/listCategory";
-import LinkItem from "@/components/link";
+import Header from "@/components/atomo/header/header";
+import ListCategory from "@/components/molecula/listCategory";
+import LinkItem from "@/components/atomo/link";
 
 export default function Home() {
     return (

@@ -3,8 +3,15 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
 import { useState } from "react";
 
+type Props = {
+    name: string
+    url : string 
+}
 
-export default function ModalLink() {
+
+
+
+export default function ModalLink( { name , url } : Props) {
     const [close , setClose] = useState(true)
 
 
@@ -24,10 +31,12 @@ export default function ModalLink() {
                     </View>
 
                     <View style={styles.modalLink}>
+
                         <View style={styles.modalLinkContainer}>
-                            <Text style={styles.link}>Rocketseat</Text>
-                            <Text style={styles.url}>Url</Text>
+                            <Text style={styles.link}>{name}</Text>
+                            <Text style={styles.url}>{url}</Text>
                         </View>
+
                         <TouchableOpacity >
                             <MaterialIcons name="copy-all" size={20} color={colors.gray[100]} />
                         </TouchableOpacity>

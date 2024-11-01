@@ -3,7 +3,7 @@ import { MaterialIcons } from '@expo/vector-icons'
 import React, { useState } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { View, Text } from 'react-native'
-import ModalLink from '../modalLink'
+import ModalLink from '../../molecula/modalLink'
 
 
 type Props = {
@@ -28,7 +28,7 @@ export default function LinkItem({ name, url }: Props) {
             </TouchableOpacity>
 
             { isOpen && 
-                <ModalLink/>
+                <ModalLink name={name} url={url} />
             }
 
         </View>
