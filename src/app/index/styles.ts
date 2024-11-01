@@ -23,5 +23,18 @@ export const styles = StyleSheet.create({
         gap: 15,
         height: 50,
         padding: 10,
-    }
+    },
+
+    linkComponent:{
+        borderTopWidth: 2,
+        borderTopColor: colors.gray[800],
+    },
+
+    linkContainer:{
+        gap: 20,
+        paddingHorizontal: 5,
+        paddingTop: 25,
+        paddingBottom:100
+    },
+
 })
