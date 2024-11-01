@@ -5,9 +5,22 @@ import ListCategory from "@/components/molecula/listCategory";
 import { router } from "expo-router";
 import InputDefault from "@/components/atomo/input";
 import ButtonDefault from "@/components/atomo/buttonDefault";
+import { useState } from "react";
 
 
 export default function AddPage() {
+  const [name, setName] = useState('')
+  const [url, setUrl] = useState('')
+  const [category, setCategory] =  useState('' )
+
+  const handleSubmit = () =>{
+    console.log({
+      name,
+      url,
+      category
+    })
+  }
+
   return (
     <View style={styles.container}>
 
@@ -21,12 +34,12 @@ export default function AddPage() {
         
         <Text style={styles.label}>Selcione uma categoria</Text>
 
-        <ListCategory onChange={()=> console.log}/>
+        <ListCategory onChange={setCategory} isSelected={category}/>
 
         <View style={styles.form}>
-          <InputDefault placeholder="Name"/>
-          <InputDefault placeholder="URL"/>
-          <ButtonDefault content="adicionar" />
+          <InputDefault placeholder="Name"  onChangeText={setName}/>
+          <InputDefault placeholder="URL" onChangeText={setUrl} />
+          <ButtonDefault content="adicionar" onPress={handleSubmit} />
         </View>
     </View>
   )

@@ -6,18 +6,12 @@ import { Pressable, PressableProps, StyleSheet, Text } from "react-native";
 type Props = PressableProps & {
     content: string
     icon?: keyof typeof MaterialIcons.glyphMap
+    isVisible : boolean
 }
-export default function CategoryItem({ icon, content, ...props }: Props) {
-    const [isVisible, setIsVisible] = useState(false)
-
-    const select = () => {
-        setIsVisible(!isVisible)
-    }
-
-
+export default function CategoryItem({ icon, content, isVisible , ...props }: Props) {
 
     return (
-        <Pressable style={isVisible ? styles.visible : styles.container} {...props} onPress={select}>
+        <Pressable style={isVisible ? styles.visible : styles.container} {...props} >
             <MaterialIcons name={icon ? icon : "code"} size={20} color={isVisible ? "#fff" : colors.gray[500] } />
             <Text style={isVisible ? styles.textVisible : styles.text }>{content}</Text>
         </Pressable>

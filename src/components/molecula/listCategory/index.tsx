@@ -4,9 +4,10 @@ import CategoryItem from "@/components/atomo/category";
 
 type Props = {
     onChange : ( categories : string ) => void
+    isSelected: string
 }
 
-export default function ListCategory( {onChange} : Props) {
+export default function ListCategory( {onChange , isSelected} : Props) {
     return (
         <FlatList
             data={categories}
@@ -16,6 +17,7 @@ export default function ListCategory( {onChange} : Props) {
                     content={item.content}
                     icon={item.icon}
                     key={item.id}
+                    isVisible={isSelected === item.content}
                     onPress={() => onChange(item.content)}
                 />
             }
