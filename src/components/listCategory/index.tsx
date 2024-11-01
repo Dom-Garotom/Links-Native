@@ -26,8 +26,10 @@ export default function ListCategory() {
 
 const style = StyleSheet.create({
     componente:{
+        height:35,
         maxHeight: 35,
-        marginVertical: 10
+        marginVertical: 10,
+        marginBottom:10,
     },
     container : {
         gap: 10,
