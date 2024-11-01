@@ -2,6 +2,7 @@ import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
 import { useState } from "react";
+import Option from "@/components/atomo/option";
 
 type Props = {
     name: string
@@ -40,6 +41,12 @@ export default function ModalLink( { name , url } : Props) {
                         <TouchableOpacity >
                             <MaterialIcons name="copy-all" size={20} color={colors.gray[100]} />
                         </TouchableOpacity>
+
+                    </View>
+
+                    <View style={styles.optionContainer}>
+                        <Option name="Excluir" icon="delete-sweep" variant="secundary"/>
+                        <Option name="Visitar" icon="language"/>
                     </View>
                 </View>
 
@@ -57,12 +64,12 @@ const styles = StyleSheet.create({
     },
 
     modalContent:{
-        height: 150,
-        maxHeight: 150,
+        // height: 150, 
+        maxHeight: 250,
         backgroundColor: colors.gray[800],
         borderRadius: 20,
         padding: 22,
-        gap: 30,
+        gap: 20,
     },
 
     modalHeader:{
@@ -93,6 +100,14 @@ const styles = StyleSheet.create({
 
     modalLinkContainer:{
         flex:1
+    },
+
+    optionContainer:{
+        flexDirection: "row", 
+        justifyContent:"space-around",
+        borderTopWidth: 1,
+        borderColor: colors.gray[600],
+        paddingVertical: 15,
     },
 
 })
