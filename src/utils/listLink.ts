@@ -1,12 +1,12 @@
 // src/utils/links.ts
 
-export type Link = {
+ type Link = {
     id: string;
     name: string;
     url: string;
 };
 
-export const Listlinks: Link[] = [
+ const Listlinks: Link[] = [
     {
         id: "1",
         name: "GitHub",
