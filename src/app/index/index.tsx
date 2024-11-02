@@ -22,7 +22,7 @@ export default function Home() {
 
     useFocusEffect(useCallback( () => {
         getLinks()
-    }, [categories]))
+    }, [categories, listLinks]))
 
 
     return (
