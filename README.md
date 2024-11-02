@@ -8,7 +8,7 @@ Este projeto é uma aplicação em React Native desenvolvida durante o minicurso
     <img src="./assets/LinksNative/Screenshot_20241102_105217_Expo Go.jpg" width="250">
     <img src="./assets/LinksNative/Screenshot_20241102_105234_Expo Go.jpg" width="250">
     <img src="./assets/LinksNative/Screenshot_20241102_105247_Expo Go.jpg" width="250">
-    <img src="./assets/LinksNative/Screenshot_20241102_110321_Expo Go1.jpg.jpg" width="250">
+    <img src="./assets/LinksNative/Screenshot_20241102_110321_Expo Go1.jpg" width="250">
 </p>
 
 # Aprendizados...
