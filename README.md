@@ -3,11 +3,12 @@
 Este projeto é uma aplicação em React Native desenvolvida durante o minicurso da Rocketseat. A aplicação permite o armazenamento e a organização de links por categorias, com funcionalidades para adicionar, listar e remover links.
 
 <p align="center">
-    <img src="./assets/LinksNative/Screenshot_20241102_104506_Expo Go.jpg" width="250">
+    <img src="./assets/LinksNative/Screenshot_20241102_104506_Expo Go.jpg" style="border-raidius=10px" width="250">
     <img src="./assets/LinksNative/Screenshot_20241102_105117_Expo Go.jpg" width="250">
     <img src="./assets/LinksNative/Screenshot_20241102_105217_Expo Go.jpg" width="250">
     <img src="./assets/LinksNative/Screenshot_20241102_105234_Expo Go.jpg" width="250">
     <img src="./assets/LinksNative/Screenshot_20241102_105247_Expo Go.jpg" width="250">
+    <img src="./assets/LinksNative/Screenshot_20241102_110321_Expo Go1.jpg.jpg" width="250">
 </p>
 
 # Aprendizados...
