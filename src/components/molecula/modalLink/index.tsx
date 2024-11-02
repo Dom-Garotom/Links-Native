@@ -1,4 +1,4 @@
-import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, Linking, Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
 import { useState } from "react";
@@ -8,22 +8,29 @@ import { linkStorage } from "@/storage/link-Storage";
 type Props = {
     id: string
     name: string
-    url : string 
+    url: string
     category: string
 }
 
 
 
 
-export default function ModalLink( { category , name , url  , id} : Props) {
-    const [close , setClose] = useState(true)
+export default function ModalLink({ category, name, url, id }: Props) {
+    const [close, setClose] = useState(true)
 
-    async function removeLink (){
+    async function removeLink() {
         await linkStorage.remove(id)
         setClose(false)
     }
 
-
+    async function acess() {
+        try {
+            Linking.openURL(url)
+            setClose(false)
+        } catch (errr){
+            Alert.alert("Invalido" , "O seu link é invalido , não foi possivel acessalo")
+        }
+    }
 
     return (
         <Modal transparent visible={close} animationType="slide">
@@ -53,8 +60,8 @@ export default function ModalLink( { category , name , url  , id} : Props) {
                     </View>
 
                     <View style={styles.optionContainer}>
-                        <Option name="Excluir" icon="delete-sweep" variant="secundary" onPress={ () => removeLink()}/>
-                        <Option name="Visitar" icon="language"/>
+                        <Option name="Excluir" icon="delete-sweep" variant="secundary" onPress={() => removeLink()} />
+                        <Option name="Visitar" icon="language" onPress={() => acess()} />
                     </View>
                 </View>
 
@@ -64,14 +71,14 @@ export default function ModalLink( { category , name , url  , id} : Props) {
 }
 
 const styles = StyleSheet.create({
-    
-    modal:{
-        flex: 1 ,
+
+    modal: {
+        flex: 1,
         justifyContent: "flex-end",
         paddingHorizontal: 10,
     },
 
-    modalContent:{
+    modalContent: {
         // height: 150, 
         maxHeight: 250,
         backgroundColor: colors.gray[800],
@@ -80,39 +87,39 @@ const styles = StyleSheet.create({
         gap: 20,
     },
 
-    modalHeader:{
+    modalHeader: {
         flexDirection: "row",
     },
 
-    modalCategory:{
-        flex:1,
-        fontSize:18,
-        fontWeight:"600",
+    modalCategory: {
+        flex: 1,
+        fontSize: 18,
+        fontWeight: "600",
         color: colors.gray[100]
     },
 
-    link:{
-        fontSize:16,
-        fontWeight:"500",
+    link: {
+        fontSize: 16,
+        fontWeight: "500",
         color: colors.gray[200],
     },
 
-    url:{
-        color:colors.gray[500]
+    url: {
+        color: colors.gray[500]
     },
 
-    modalLink:{
-        flexDirection:"row",
-        alignItems:"center",
+    modalLink: {
+        flexDirection: "row",
+        alignItems: "center",
     },
 
-    modalLinkContainer:{
-        flex:1
+    modalLinkContainer: {
+        flex: 1
     },
 
-    optionContainer:{
-        flexDirection: "row", 
-        justifyContent:"space-around",
+    optionContainer: {
+        flexDirection: "row",
+        justifyContent: "space-around",
         borderTopWidth: 1,
         borderColor: colors.gray[600],
         paddingVertical: 15,
