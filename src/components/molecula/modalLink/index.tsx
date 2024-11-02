@@ -3,27 +3,35 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "@/styles/colors";
 import { useState } from "react";
 import Option from "@/components/atomo/option";
+import { linkStorage } from "@/storage/link-Storage";
 
 type Props = {
+    id: string
     name: string
     url : string 
+    category: string
 }
 
 
 
 
-export default function ModalLink( { name , url } : Props) {
+export default function ModalLink( { category , name , url  , id} : Props) {
     const [close , setClose] = useState(true)
+
+    async function removeLink (){
+        await linkStorage.remove(id)
+        setClose(false)
+    }
 
 
 
     return (
-        <Modal transparent visible={close} >
+        <Modal transparent visible={close} animationType="slide">
             <View style={styles.modal}>
                 <View style={styles.modalContent}>
                     <View style={styles.modalHeader}>
 
-                        <Text style={styles.modalCategory}>Categoria</Text>
+                        <Text style={styles.modalCategory}>{category}</Text>
 
                         <TouchableOpacity onPress={() => setClose(!close)}>
                             <MaterialIcons name="exit-to-app" size={20} color={colors.gray[100]} />
@@ -45,7 +53,7 @@ export default function ModalLink( { name , url } : Props) {
                     </View>
 
                     <View style={styles.optionContainer}>
-                        <Option name="Excluir" icon="delete-sweep" variant="secundary"/>
+                        <Option name="Excluir" icon="delete-sweep" variant="secundary" onPress={ () => removeLink()}/>
                         <Option name="Visitar" icon="language"/>
                     </View>
                 </View>

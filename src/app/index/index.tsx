@@ -39,8 +39,10 @@ export default function Home() {
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => (
                     <LinkItem
+                        id={item.id}
                         name={item.name}
                         url={item.url}
+                        category={item.category}
                     />
                 )}
                 showsVerticalScrollIndicator={false}

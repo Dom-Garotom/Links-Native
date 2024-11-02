@@ -7,11 +7,13 @@ import ModalLink from '../../molecula/modalLink'
 
 
 type Props = {
+    id: string
     name: string
     url: string
+    category: string
 }
 
-export default function LinkItem({ name, url }: Props) {
+export default function LinkItem({ category , id ,name, url }: Props) {
     const [isOpen , setOpen] = useState(false)
     
 
@@ -28,7 +30,7 @@ export default function LinkItem({ name, url }: Props) {
             </TouchableOpacity>
 
             { isOpen && 
-                <ModalLink name={name} url={url} />
+                <ModalLink  id={id} category={category} name={name} url={url} />
             }
 
         </View>
