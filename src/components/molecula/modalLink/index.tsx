@@ -24,10 +24,10 @@ export default function ModalLink({ category, name, url, id }: Props) {
     }
 
     async function acess() {
-        try {
+        if (await Linking.canOpenURL(url)){
             Linking.openURL(url)
             setClose(false)
-        } catch (errr){
+        } else {
             Alert.alert("Invalido" , "O seu link é invalido , não foi possivel acessalo")
         }
     }
