@@ -10,15 +10,19 @@ import { LinkStorage } from "@/storage/link-Storage";
 
 export default function Home() {
     const [listLinks , setList] = useState<LinkStorage[]>([])
+    const [categories , setCategories] = useState('')
 
     async function getLinks(){
         const response = await linkStorage.get();
-        setList(response);
+
+        const filter = response.filter( (item) => item.category === categories)
+
+        setList(filter);
     }
 
     useFocusEffect(useCallback( () => {
         getLinks()
-    }, []))
+    }, [categories]))
 
 
     return (
@@ -26,8 +30,8 @@ export default function Home() {
             <Header />
 
             <ListCategory
-                onChange={() => console.log}
-                isSelected=""
+                onChange={(categoria) => setCategories(categoria)}
+                isSelected={categories}
             />
 
             <FlatList

@@ -39,8 +39,12 @@ export default function AddPage() {
         category
       })
 
-      const data = await linkStorage.get();
-      console.log(data);
+      Alert.alert("Sucesso", "Novo link adicionado" , [
+        {
+          text: "Ok",
+          onPress: () => router.back()
+        }
+      ])
 
     } catch (error) {
       Alert.alert("Error", "Infelizmente não foi possivel adicionar o link")
